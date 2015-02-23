@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.esgi.taskmanager.view.MainActivity" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" >
+
+        <Button
+            android:id="@+id/buttonAdd"
+            style="@style/headButton"
+            android:onClick="addTask"
+            android:text="@string/plus" />
+
+        <Button
+            android:id="@+id/buttonDelete"
+            style="@style/headButton"
+            android:layout_toRightOf="@id/buttonAdd"
+            android:onClick="deleteTask"
+            android:text="@string/less" />
+
+        <Button
+            android:id="@+id/buttonFilter"
+            style="@style/headButton"
+            android:layout_toRightOf="@id/buttonDelete"
+            android:onClick="filterTask"
+            android:text="@string/filter" />
+
+        <Button
+            android:id="@+id/buttonSort"
+            style="@style/headButton"
+            android:layout_toRightOf="@id/buttonFilter"
+            android:onClick="sortTask"
+            android:text="@string/sort" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header" >
+    </ListView>
+
+</RelativeLayout>

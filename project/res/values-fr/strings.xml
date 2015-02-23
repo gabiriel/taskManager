@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="app_name">Gestion de tache</string>
+    <string name="filter">Filtrer</string>
+    <string name="sort">Trier</string>
+
+</resources>
