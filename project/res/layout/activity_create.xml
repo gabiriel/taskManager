@@ -1,36 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout 
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-    
-   <EditText
-       android:id="@+id/textTitle"
-       android:hint="@string/title"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:ems="10" >
-       <requestFocus />
-   </EditText>
 
-   <EditText
-       android:id="@+id/textDescription"
-       android:layout_below="@id/textTitle"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:lines="8"
-       android:minLines="6"
-       android:ems="10"
-       android:hint="@string/description"
-       android:inputType="textMultiLine" />
-  
-   <TextView
-       android:id="@+id/labelDate"
-       android:layout_below="@id/textDescription"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="@string/labelDate"
-       android:textAppearance="?android:attr/textAppearanceLarge" />
+    <EditText
+        android:id="@+id/textTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:ems="10"
+        android:lines="1"
+        android:maxLength="30"
+        android:hint="@string/title" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/textDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textTitle"
+        android:ems="10"
+        android:hint="@string/description"
+        android:inputType="textMultiLine"
+        android:lines="6"
+        android:minLines="6" />
+
+    <TextView
+        android:id="@+id/labelDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textDescription"
+        android:text="@string/labelDate"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/dateValue"
@@ -43,7 +46,7 @@
         android:maxLines="1"
         android:onClick="showCalendarDialog"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-    
+
     <TextView
         android:id="@+id/timeLabel"
         android:layout_width="wrap_content"
@@ -57,15 +60,49 @@
         android:id="@+id/timeValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/dateValue"
         android:layout_alignLeft="@+id/dateValue"
+        android:layout_below="@id/dateValue"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp"
         android:clickable="true"
         android:onClick="showTimeDialog"
         android:text="@string/timeFormat"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-    
+
+    <TextView
+        android:id="@+id/labelStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/timeLabel"
+        android:layout_marginTop="23dp"
+        android:text="@string/labelStatus"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Spinner
+        android:id="@+id/status_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/labelStatus"
+        android:layout_toRightOf="@id/labelStatus" />
+
+    <TextView
+        android:id="@+id/labelPriority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/labelStatus"
+        android:layout_marginTop="23dp"
+        android:text="@string/labelPriority"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Spinner
+        android:id="@+id/priority_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/labelPriority"
+        android:layout_toRightOf="@id/labelPriority" />
+
     <LinearLayout
         android:id="@+id/buttonsSaveDelete"
         android:layout_width="match_parent"
@@ -73,21 +110,20 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:orientation="horizontal" >
-    
-    	<Button
+
+        <Button
             android:id="@+id/buttonSave"
-            android:layout_width="120dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:onClick="saveTask"
             android:text="@string/save" />
 
         <Button
             android:id="@+id/buttonDelete"
-            android:layout_width="120dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:onClick="deleteTask"
             android:text="@string/delete" />
     </LinearLayout>
-
 
 </RelativeLayout>

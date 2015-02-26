@@ -8,6 +8,10 @@
 package com.esgi.taskmanager;
 
 public final class R {
+    public static final class array {
+        public static final int priority_array=0x7f060001;
+        public static final int status_array=0x7f060000;
+    }
     public static final class attr {
     }
     public static final class dimen {
@@ -23,26 +27,33 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
-        public static final int round_button=0x7f020001;
+        public static final int round_button_done=0x7f020001;
+        public static final int round_button_header=0x7f020002;
+        public static final int round_button_in_progress=0x7f020003;
+        public static final int round_button_to_do=0x7f020004;
     }
     public static final class id {
-        public static final int action_settings=0x7f080010;
-        public static final int buttonAdd=0x7f08000a;
-        public static final int buttonDelete=0x7f080008;
-        public static final int buttonFilter=0x7f08000b;
-        public static final int buttonSave=0x7f080007;
-        public static final int buttonSort=0x7f08000c;
-        public static final int buttonsSaveDelete=0x7f080006;
-        public static final int dateValue=0x7f080003;
-        public static final int description=0x7f08000e;
-        public static final int extra=0x7f08000f;
-        public static final int header=0x7f080009;
-        public static final int labelDate=0x7f080002;
-        public static final int textDescription=0x7f080001;
-        public static final int textTitle=0x7f080000;
-        public static final int timeLabel=0x7f080004;
-        public static final int timeValue=0x7f080005;
-        public static final int title=0x7f08000d;
+        public static final int action_settings=0x7f090014;
+        public static final int buttonAdd=0x7f09000e;
+        public static final int buttonDelete=0x7f09000c;
+        public static final int buttonFilter=0x7f09000f;
+        public static final int buttonSave=0x7f09000b;
+        public static final int buttonSort=0x7f090010;
+        public static final int buttonsSaveDelete=0x7f09000a;
+        public static final int dateValue=0x7f090003;
+        public static final int description=0x7f090013;
+        public static final int header=0x7f09000d;
+        public static final int labelDate=0x7f090002;
+        public static final int labelPriority=0x7f090008;
+        public static final int labelStatus=0x7f090006;
+        public static final int priority_spinner=0x7f090009;
+        public static final int status=0x7f090011;
+        public static final int status_spinner=0x7f090007;
+        public static final int textDescription=0x7f090001;
+        public static final int textTitle=0x7f090000;
+        public static final int timeLabel=0x7f090004;
+        public static final int timeValue=0x7f090005;
+        public static final int title=0x7f090012;
     }
     public static final class layout {
         public static final int activity_create=0x7f030000;
@@ -50,28 +61,30 @@ public final class R {
         public static final int list_item=0x7f030002;
     }
     public static final class menu {
-        public static final int main=0x7f070000;
+        public static final int main=0x7f080000;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
         public static final int dateFormat=0x7f050009;
-        public static final int delete=0x7f05000d;
-        public static final int deletedIntoDB=0x7f050011;
+        public static final int delete=0x7f05000f;
+        public static final int deletedIntoDB=0x7f050013;
         public static final int description=0x7f050007;
-        public static final int editedIntoDB=0x7f050010;
+        public static final int editedIntoDB=0x7f050012;
         public static final int filter=0x7f050004;
         public static final int labelDate=0x7f050008;
+        public static final int labelPriority=0x7f05000d;
+        public static final int labelStatus=0x7f05000c;
         public static final int labelTime=0x7f05000a;
         public static final int less=0x7f050003;
-        public static final int pleaseFillTheFields=0x7f05000e;
+        public static final int pleaseFillTheFields=0x7f050010;
         /**  Header Button 
          */
         public static final int plus=0x7f050002;
-        public static final int save=0x7f05000c;
+        public static final int save=0x7f05000e;
         /**  SQL Message 
          */
-        public static final int savedIntoDB=0x7f05000f;
+        public static final int savedIntoDB=0x7f050011;
         public static final int sort=0x7f050005;
         public static final int timeFormat=0x7f05000b;
         /**  Create Page 
@@ -100,11 +113,11 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
-        public static final int headButton=0x7f060002;
+        public static final int AppTheme=0x7f070001;
+        public static final int headButton=0x7f070002;
     }
 }

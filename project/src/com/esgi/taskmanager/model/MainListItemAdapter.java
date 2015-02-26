@@ -46,6 +46,27 @@ public class MainListItemAdapter extends BaseAdapter {
 		text.setText(tasks.get(position).getTitle());
 		TextView description = (TextView) vi.findViewById(R.id.description);
 		description.setText(tasks.get(position).getDescription());
+
+		TextView circle = (TextView) vi.findViewById(R.id.status);
+		circle.setText(String.valueOf(tasks.get(position).getStatus()));
+		int res_background;
+		String letter_in_circle;
+		if(tasks.get(position).getStatus()==0)
+			res_background = R.drawable.round_button_to_do;
+		else if (tasks.get(position).getStatus()==1)
+			res_background =R.drawable.round_button_in_progress;
+		else
+			res_background =R.drawable.round_button_done;
+
+		if(tasks.get(position).getPriority()==0)
+			letter_in_circle = "";
+		else if (tasks.get(position).getPriority()==1)
+			letter_in_circle = "!";
+		else
+			letter_in_circle = "!!!";
+
+		circle.setBackgroundResource(res_background);
+		circle.setText(letter_in_circle);
 		return vi;
 	}
 }

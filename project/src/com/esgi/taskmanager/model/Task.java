@@ -1,9 +1,15 @@
 package com.esgi.taskmanager.model;
 
+import java.util.Comparator;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Task implements Parcelable{
+	
+	public static long HIGH_PRIORITY = 1;
+	public static long MID_PRIORITY = 2;
+	public static long LOW_PRIORITY = 3;
 
 	private long id;
 	private String title;
@@ -21,7 +27,7 @@ public class Task implements Parcelable{
 		date = "XX-XX-XXXX";
 		hour = "XX:XX";
 		category = "";
-		priority = 0;
+		priority = LOW_PRIORITY;
 		status = 0;
 	}
 
@@ -64,6 +70,24 @@ public class Task implements Parcelable{
 			return new Task[size];
 		}
 	};
+
+	
+    // Comparator
+    public static class CompareTitle implements Comparator<Task> {
+        @Override
+        public int compare(Task t1, Task t2) {
+            return (int) (t1.title.compareTo(t2.title));
+        }
+    }
+
+    // Comparator
+    public static class ComparePriority implements Comparator<Task> {
+        @Override
+        public int compare(Task t1, Task t2) {
+            return (int) (t2.priority - t1.priority);
+        }
+    }
+
 
 	public String getTitle() {
 		return title;

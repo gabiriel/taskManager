@@ -17,13 +17,29 @@
     <string name="dateFormat">dd-mm-yyyy</string>
     <string name="labelTime">Hour</string>
     <string name="timeFormat">hh:mm</string>
+    <string name="labelStatus">Status</string>
+    <string name="labelPriority">Priority</string>
     <string name="save">Save</string>
     <string name="delete">Delete</string>
     <string name="pleaseFillTheFields">Please fill all the fields</string>
+
+    <string-array name="status_array">
+        <item>To do</item>
+        <item>In progress</item>
+        <item>Done</item>
+    </string-array>
+
+    <string-array name="priority_array">
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
 
     <!-- SQL Message -->
     <string name="savedIntoDB">Saved into DB</string>
     <string name="editedIntoDB">Edited into DB</string>
     <string name="deletedIntoDB">Deleted into DB</string>
 
+    
+    
 </resources>

@@ -22,7 +22,7 @@
             <item name="android:layout_height">50dp</item>
             <item name="android:layout_marginLeft">22dp</item>
             <item name="android:topOffset">2dp</item>
-            <item name="android:background">@drawable/round_button</item>
+            <item name="android:background">@drawable/round_button_header</item>
             <item name="android:gravity">center</item>
             
     </style>

@@ -1,5 +1,6 @@
 package com.esgi.taskmanager.view;
 
+import java.util.Collections;
 import java.util.List;
 
 import com.esgi.taskmanager.R;
@@ -15,7 +16,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-import android.widget.Toast;
 
 public class MainActivity extends ListActivity{
 
@@ -45,7 +45,7 @@ public class MainActivity extends ListActivity{
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				Task taskSelected = (Task) listView.getItemAtPosition(position);
-				Log.i(TAG, "Task selected : "+taskSelected.getId());
+				Log.i(TAG, "Task selected : " + taskSelected.getId());
 				Intent editActivity = new Intent(view.getContext(), CreateActivity.class);
 				editActivity.putExtra("task", taskSelected);
 				startActivity(editActivity);
@@ -69,6 +69,9 @@ public class MainActivity extends ListActivity{
 
 	public void sortTask(View view) {
 		Log.i(TAG, "Click on Sort Button");
+		Collections.sort(list, new Task.ComparePriority());
+		
+		listView.setAdapter(new MainListItemAdapter(this, list));
 	}
 
 	@Override

@@ -12,8 +12,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -25,6 +27,7 @@ public class CreateActivity extends Activity {
 	final Intent intent = getIntent();
 	private TextView dateValue, timeValue;
 	private EditText textTitle, textDescription;
+	private Spinner spinnerStatus, spinnerPriority;
 	private DataBaseAdapter dbAdapter;
 	private Task task;
 	private Boolean editMode;
@@ -35,15 +38,26 @@ public class CreateActivity extends Activity {
 		setContentView(R.layout.activity_create);
 		editMode=false;
 	}
-	
+
 	@Override
 	protected void onStart() {
 		super.onStart();
-		
+
 		dateValue = (TextView) findViewById(R.id.dateValue);
 		timeValue = (TextView)findViewById(R.id.timeValue);
 		textTitle = (EditText)findViewById(R.id.textTitle);
 		textDescription = (EditText)findViewById(R.id.textDescription);
+		spinnerStatus = (Spinner)findViewById(R.id.status_spinner);
+		spinnerPriority = (Spinner)findViewById(R.id.priority_spinner);
+
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.status_array, android.R.layout.simple_spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinnerStatus.setAdapter(adapter);
+
+		adapter = ArrayAdapter.createFromResource(this, R.array.priority_array, android.R.layout.simple_spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinnerPriority.setAdapter(adapter);
+		
 		final Calendar c = Calendar.getInstance();
 
 		dbAdapter = new DataBaseAdapter(this);
@@ -59,6 +73,9 @@ public class CreateActivity extends Activity {
 			textDescription.setText(task.getDescription());
 			dateValue.setText(task.getDate());
 			timeValue.setText(task.getHour());
+			spinnerStatus.setSelection((int) task.getStatus());
+			spinnerPriority.setSelection((int) task.getPriority());
+			
 		}else{
 			mYear = c.get(Calendar.YEAR);
 			mMonth = c.get(Calendar.MONTH);
@@ -118,8 +135,8 @@ public class CreateActivity extends Activity {
 		task.setTitle(textTitle.getText().toString());
 		task.setDescription(textDescription.getText().toString());
 		task.setCategory("VIDE");
-		task.setStatus(1);
-		task.setPriority(1);
+		task.setStatus(spinnerStatus.getSelectedItemId());
+		task.setPriority(spinnerPriority.getSelectedItemId());
 
 		if(dbAdapter==null){
 			Log.i(TAG, "DBAdapter == null");
@@ -137,7 +154,7 @@ public class CreateActivity extends Activity {
 		dbAdapter.close();
 		finish();
 	}
-	
+
 	public void deleteTask(View view){
 		if(editMode){
 			dbAdapter.open();
