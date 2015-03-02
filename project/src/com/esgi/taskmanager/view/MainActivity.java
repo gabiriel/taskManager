@@ -94,8 +94,7 @@ public class MainActivity extends ListActivity{
 
 	public void filterTask(View view) {
 		Log.i(TAG, "Click on Filter Button");
-		showPopup(MainActivity.this);
-
+		showPopupFilter(MainActivity.this);
 	}
 
 	public void sortTask(View view) {
@@ -172,7 +171,7 @@ public class MainActivity extends ListActivity{
 		super.onPause();
 	}
 
-	private void showPopup(final Activity context) {
+	private void showPopupFilter(final Activity context) {
 		int popupWidth = WindowManager.LayoutParams.WRAP_CONTENT;
 		int popupHeight = WindowManager.LayoutParams.WRAP_CONTENT;
 

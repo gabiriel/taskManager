@@ -164,5 +164,4 @@ public class CreateActivity extends Activity {
 		}
 		finish();
 	}
-
 }

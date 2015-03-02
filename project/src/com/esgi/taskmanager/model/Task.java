@@ -6,7 +6,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Task implements Parcelable{
-	
+
 	public static long HIGH_PRIORITY = 1;
 	public static long MID_PRIORITY = 2;
 	public static long LOW_PRIORITY = 3;
@@ -71,30 +71,30 @@ public class Task implements Parcelable{
 		}
 	};
 
-	
-    // Comparator
-    public static class CompareTitle implements Comparator<Task> {
-        @Override
-        public int compare(Task t1, Task t2) {
-            return (int) (t1.title.compareToIgnoreCase(t2.title));
-        }
-    }
 
-    // Comparator
-    public static class ComparePriority implements Comparator<Task> {
-        @Override
-        public int compare(Task t1, Task t2) {
-            return (int) (t2.priority - t1.priority);
-        }
-    }
+	// Comparator
+	public static class CompareTitle implements Comparator<Task> {
+		@Override
+		public int compare(Task t1, Task t2) {
+			return (int) (t1.title.compareToIgnoreCase(t2.title));
+		}
+	}
 
-    // Comparator
-    public static class CompareStatus implements Comparator<Task> {
-        @Override
-        public int compare(Task t1, Task t2) {
-            return (int) (t1.status - t2.status);
-        }
-    }
+	// Comparator
+	public static class ComparePriority implements Comparator<Task> {
+		@Override
+		public int compare(Task t1, Task t2) {
+			return (int) (t2.priority - t1.priority);
+		}
+	}
+
+	// Comparator
+	public static class CompareStatus implements Comparator<Task> {
+		@Override
+		public int compare(Task t1, Task t2) {
+			return (int) (t1.status - t2.status);
+		}
+	}
 
 
 	public String getTitle() {

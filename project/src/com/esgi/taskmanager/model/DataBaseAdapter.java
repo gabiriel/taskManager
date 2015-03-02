@@ -110,7 +110,6 @@ public class DataBaseAdapter {
 		Log.i(TAG, "DELETE TASK ("+ task.getId() +") INTO TABLE");
 	}
 
-
 	private Task cursorToTask(Cursor cursor) {
 		Task task = new Task();
 		task.setId(cursor.getLong(0));
@@ -136,6 +135,4 @@ public class DataBaseAdapter {
 		cursor.close();
 		return list;
 	}
-
-
 }

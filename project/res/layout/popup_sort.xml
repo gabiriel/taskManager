@@ -2,43 +2,43 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#000" >
+    android:background="#000"
+    android:orientation="vertical" >
 
     <TextView
         android:id="@+id/sortTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:clickable="true"
+        android:paddingBottom="8dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:textColor="#FFF"
-        android:clickable="true"
-        android:text="@string/sortByTitle" />
+        android:text="@string/sortByTitle"
+        android:textColor="#FFF" />
 
     <TextView
         android:id="@+id/sortStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:clickable="true"
+        android:paddingBottom="8dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:textColor="#FFF"
-        android:clickable="true"
-        android:text="@string/sortByStatus" />
+        android:text="@string/sortByStatus"
+        android:textColor="#FFF" />
 
     <TextView
         android:id="@+id/sortPriority"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:clickable="true"
+        android:paddingBottom="8dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:textColor="#FFF"
-        android:clickable="true"
-        android:text="@string/sortByPriority" />
+        android:text="@string/sortByPriority"
+        android:textColor="#FFF" />
 
 </LinearLayout>

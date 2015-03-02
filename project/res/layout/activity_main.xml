@@ -35,7 +35,6 @@
             android:layout_toRightOf="@id/buttonFilter"
             android:onClick="sortTask"
             android:text="@string/sort" />
-
     </RelativeLayout>
 
     <ListView

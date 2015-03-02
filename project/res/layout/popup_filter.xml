@@ -3,101 +3,101 @@
     android:id="@+id/popup"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#000" >
+    android:background="#000"
+    android:orientation="vertical" >
 
     <TextView
         android:id="@+id/labelTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFF"
         android:text="@string/title"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFF" />
 
     <EditText
         android:id="@+id/textTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFF"
         android:ems="10"
         android:hint="@string/title"
         android:lines="1"
         android:maxLength="30"
+        android:textColor="#FFF"
         android:textSize="20sp" />
 
     <TextView
         android:id="@+id/labelDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFF"
         android:text="@string/labelDate"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFF" />
 
     <TextView
         android:id="@+id/labelStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFF"
         android:text="@string/start"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFF" />
 
     <TextView
         android:id="@+id/dateStartValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFF"
         android:clickable="true"
         android:hint="@string/dateFormat"
         android:maxLines="1"
         android:onClick="showCalendarDialogOnStart"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFF" />
 
     <TextView
         android:id="@+id/labelEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFF"
         android:text="@string/end"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFF" />
 
     <TextView
         android:id="@+id/dateEndValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFF"
         android:clickable="true"
         android:hint="@string/dateFormat"
         android:maxLines="1"
         android:onClick="showCalendarDialogOnEnd"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFF" />
 
     <TextView
         android:id="@+id/statusFilterLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#FFF" 
         android:text="@string/statusFilterLabel"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFF" />
 
     <Spinner
         android:id="@+id/status_spinner_popup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:spinnerMode="dialog"
-        android:background="#FFF" />
+        android:background="#FFF"
+        android:spinnerMode="dialog" />
 
     <Button
         android:id="@+id/valid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFF"
-        android:text="@string/validate" />
+        android:text="@string/validate"
+        android:textColor="#FFF" />
 
     <Button
         android:id="@+id/close"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFF"
-        android:text="@string/close" />
+        android:text="@string/close"
+        android:textColor="#FFF" />
 
 </LinearLayout>
