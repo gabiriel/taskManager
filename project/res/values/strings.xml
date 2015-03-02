@@ -10,6 +10,21 @@
     <string name="filter">Filter</string>
     <string name="sort">Sort</string>
 
+    <!-- POPUP Filter -->
+    <string name="timeFilterlabel">Time</string>
+    <string name="statusFilterLabel">Status</string>
+    <string name="start">Start:</string>
+    <string name="selectStartDate">Select start date:</string>
+    <string name="end">End:</string>
+    <string name="selectEndDate">Select end date:</string>
+    <string name="validate">Valid</string>
+    <string name="close">Close</string>
+
+    <!-- POPUP Sort -->
+    <string name="sortByTitle">Sort by Title</string>
+    <string name="sortByStatus">Sort by Status</string>
+    <string name="sortByPriority">Sort by Priority</string>
+
     <!-- Create Page -->
     <string name="title">Title</string>
     <string name="description">Description</string>
@@ -40,6 +55,4 @@
     <string name="editedIntoDB">Edited into DB</string>
     <string name="deletedIntoDB">Deleted into DB</string>
 
-    
-    
 </resources>

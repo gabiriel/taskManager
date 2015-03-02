@@ -33,32 +33,47 @@ public final class R {
         public static final int round_button_to_do=0x7f020004;
     }
     public static final class id {
-        public static final int action_settings=0x7f090014;
+        public static final int action_settings=0x7f090021;
         public static final int buttonAdd=0x7f09000e;
         public static final int buttonDelete=0x7f09000c;
         public static final int buttonFilter=0x7f09000f;
         public static final int buttonSave=0x7f09000b;
         public static final int buttonSort=0x7f090010;
         public static final int buttonsSaveDelete=0x7f09000a;
+        public static final int close=0x7f09001d;
+        public static final int dateEndValue=0x7f090019;
+        public static final int dateStartValue=0x7f090017;
         public static final int dateValue=0x7f090003;
         public static final int description=0x7f090013;
         public static final int header=0x7f09000d;
         public static final int labelDate=0x7f090002;
+        public static final int labelEnd=0x7f090018;
         public static final int labelPriority=0x7f090008;
+        public static final int labelStart=0x7f090016;
         public static final int labelStatus=0x7f090006;
+        public static final int labelTitle=0x7f090015;
+        public static final int popup=0x7f090014;
         public static final int priority_spinner=0x7f090009;
+        public static final int sortPriority=0x7f090020;
+        public static final int sortStatus=0x7f09001f;
+        public static final int sortTitle=0x7f09001e;
         public static final int status=0x7f090011;
+        public static final int statusFilterLabel=0x7f09001a;
         public static final int status_spinner=0x7f090007;
+        public static final int status_spinner_popup=0x7f09001b;
         public static final int textDescription=0x7f090001;
         public static final int textTitle=0x7f090000;
         public static final int timeLabel=0x7f090004;
         public static final int timeValue=0x7f090005;
         public static final int title=0x7f090012;
+        public static final int valid=0x7f09001c;
     }
     public static final class layout {
         public static final int activity_create=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int list_item=0x7f030002;
+        public static final int popup_filter=0x7f030003;
+        public static final int popup_sort=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -66,30 +81,50 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
-        public static final int dateFormat=0x7f050009;
-        public static final int delete=0x7f05000f;
-        public static final int deletedIntoDB=0x7f050013;
-        public static final int description=0x7f050007;
-        public static final int editedIntoDB=0x7f050012;
+        public static final int close=0x7f05000d;
+        public static final int dateFormat=0x7f050014;
+        public static final int delete=0x7f05001a;
+        public static final int deletedIntoDB=0x7f05001e;
+        public static final int description=0x7f050012;
+        public static final int editedIntoDB=0x7f05001d;
+        public static final int end=0x7f05000a;
         public static final int filter=0x7f050004;
-        public static final int labelDate=0x7f050008;
-        public static final int labelPriority=0x7f05000d;
-        public static final int labelStatus=0x7f05000c;
-        public static final int labelTime=0x7f05000a;
+        public static final int labelDate=0x7f050013;
+        public static final int labelPriority=0x7f050018;
+        public static final int labelStatus=0x7f050017;
+        public static final int labelTime=0x7f050015;
         public static final int less=0x7f050003;
-        public static final int pleaseFillTheFields=0x7f050010;
+        public static final int pleaseFillTheFields=0x7f05001b;
         /**  Header Button 
+ Header Button 
          */
         public static final int plus=0x7f050002;
-        public static final int save=0x7f05000e;
+        public static final int save=0x7f050019;
         /**  SQL Message 
+ SQL Message 
          */
-        public static final int savedIntoDB=0x7f050011;
+        public static final int savedIntoDB=0x7f05001c;
+        public static final int selectEndDate=0x7f05000b;
+        public static final int selectStartDate=0x7f050009;
         public static final int sort=0x7f050005;
-        public static final int timeFormat=0x7f05000b;
-        /**  Create Page 
+        public static final int sortByPriority=0x7f050010;
+        public static final int sortByStatus=0x7f05000f;
+        /**  POPUP Sort 
+ POPUP Sort 
          */
-        public static final int title=0x7f050006;
+        public static final int sortByTitle=0x7f05000e;
+        public static final int start=0x7f050008;
+        public static final int statusFilterLabel=0x7f050007;
+        /**  POPUP Filter 
+ POPUP Filter 
+         */
+        public static final int timeFilterlabel=0x7f050006;
+        public static final int timeFormat=0x7f050016;
+        /**  Create Page 
+ Create Page 
+         */
+        public static final int title=0x7f050011;
+        public static final int validate=0x7f05000c;
     }
     public static final class style {
         /** 

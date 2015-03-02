@@ -76,7 +76,7 @@ public class Task implements Parcelable{
     public static class CompareTitle implements Comparator<Task> {
         @Override
         public int compare(Task t1, Task t2) {
-            return (int) (t1.title.compareTo(t2.title));
+            return (int) (t1.title.compareToIgnoreCase(t2.title));
         }
     }
 
@@ -85,6 +85,14 @@ public class Task implements Parcelable{
         @Override
         public int compare(Task t1, Task t2) {
             return (int) (t2.priority - t1.priority);
+        }
+    }
+
+    // Comparator
+    public static class CompareStatus implements Comparator<Task> {
+        @Override
+        public int compare(Task t1, Task t2) {
+            return (int) (t1.status - t2.status);
         }
     }
 
