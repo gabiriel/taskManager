@@ -27,46 +27,48 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
-        public static final int round_button_done=0x7f020001;
-        public static final int round_button_header=0x7f020002;
-        public static final int round_button_in_progress=0x7f020003;
-        public static final int round_button_to_do=0x7f020004;
+        public static final int round_button_delete=0x7f020001;
+        public static final int round_button_done=0x7f020002;
+        public static final int round_button_header=0x7f020003;
+        public static final int round_button_in_progress=0x7f020004;
+        public static final int round_button_to_do=0x7f020005;
     }
     public static final class id {
-        public static final int action_settings=0x7f090021;
+        public static final int action_settings=0x7f090022;
         public static final int buttonAdd=0x7f09000e;
         public static final int buttonDelete=0x7f09000c;
         public static final int buttonFilter=0x7f09000f;
         public static final int buttonSave=0x7f09000b;
         public static final int buttonSort=0x7f090010;
         public static final int buttonsSaveDelete=0x7f09000a;
-        public static final int close=0x7f09001d;
-        public static final int dateEndValue=0x7f090019;
-        public static final int dateStartValue=0x7f090017;
+        public static final int close=0x7f09001e;
+        public static final int dateEndValue=0x7f09001a;
+        public static final int dateStartValue=0x7f090018;
         public static final int dateValue=0x7f090003;
         public static final int description=0x7f090013;
         public static final int header=0x7f09000d;
         public static final int labelDate=0x7f090002;
-        public static final int labelEnd=0x7f090018;
+        public static final int labelEnd=0x7f090019;
         public static final int labelPriority=0x7f090008;
-        public static final int labelStart=0x7f090016;
+        public static final int labelStart=0x7f090017;
         public static final int labelStatus=0x7f090006;
-        public static final int labelTitle=0x7f090015;
         public static final int popup=0x7f090014;
         public static final int priority_spinner=0x7f090009;
-        public static final int sortPriority=0x7f090020;
-        public static final int sortStatus=0x7f09001f;
-        public static final int sortTitle=0x7f09001e;
+        public static final int sortPriority=0x7f090021;
+        public static final int sortStatus=0x7f090020;
+        public static final int sortTitle=0x7f09001f;
         public static final int status=0x7f090011;
-        public static final int statusFilterLabel=0x7f09001a;
         public static final int status_spinner=0x7f090007;
-        public static final int status_spinner_popup=0x7f09001b;
+        public static final int status_spinner_popup=0x7f09001c;
+        public static final int switchDate=0x7f090016;
+        public static final int switchStatus=0x7f09001b;
+        public static final int switchTitle=0x7f090015;
         public static final int textDescription=0x7f090001;
         public static final int textTitle=0x7f090000;
         public static final int timeLabel=0x7f090004;
         public static final int timeValue=0x7f090005;
         public static final int title=0x7f090012;
-        public static final int valid=0x7f09001c;
+        public static final int valid=0x7f09001d;
     }
     public static final class layout {
         public static final int activity_create=0x7f030000;

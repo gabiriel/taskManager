@@ -6,13 +6,13 @@
     android:background="#000"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/labelTitle"
+    <Switch
+        android:id="@+id/switchTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#FFF" />
+        android:textColor="#FFF"
+        android:textSize="28sp" />
 
     <EditText
         android:id="@+id/textTitle"
@@ -25,13 +25,13 @@
         android:textColor="#FFF"
         android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/labelDate"
+    <Switch
+        android:id="@+id/switchDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/labelDate"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#FFF" />
+        android:textColor="#FFF"
+        android:textSize="28sp" />
 
     <TextView
         android:id="@+id/labelStart"
@@ -71,18 +71,22 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FFF" />
 
-    <TextView
-        android:id="@+id/statusFilterLabel"
-        android:layout_width="match_parent"
+    <Switch
+        android:id="@+id/switchStatus"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/statusFilterLabel"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#FFF" />
+        android:textColor="#FFF"
+        android:textSize="28sp" />
 
     <Spinner
         android:id="@+id/status_spinner_popup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:background="#FFF"
         android:spinnerMode="dialog" />
 

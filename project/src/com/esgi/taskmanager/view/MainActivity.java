@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import com.esgi.taskmanager.R;
@@ -21,14 +22,17 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.SparseBooleanArray;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.view.View.OnTouchListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -37,6 +41,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,6 +57,7 @@ public class MainActivity extends ListActivity{
 	private EditText filterTitle;
 	private Spinner spinnerStatus;
 	private int year_start, month_start, day_start, year_end, month_end, day_end ;
+	private Switch switchTitle, switchDate, switchStatus;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +86,13 @@ public class MainActivity extends ListActivity{
 				startActivity(editActivity);
 			}
 		}); 
+
+		listView.setOnItemLongClickListener(new OnItemLongClickListener() {
+			public boolean onItemLongClick(AdapterView<?> adv, View v, int pos, long id) {
+				((MainListItemAdapter) listView.getAdapter()).toggleSelection(pos);
+				return true;
+			}
+		});
 	}
 
 	public void addTask(View view) {
@@ -90,6 +103,21 @@ public class MainActivity extends ListActivity{
 
 	public void deleteTask(View view) {
 		Log.i(TAG, "Click on Delete Button");
+		deleteSelectedTasks(view);
+	}
+
+	private void deleteSelectedTasks(View view) {
+		SparseBooleanArray sba = ((MainListItemAdapter) listView.getAdapter()).getSelectedTasks();
+		dbAdapter.open();
+		for(int i=0;i<sba.size();i++){
+			Toast.makeText(getApplicationContext(), "delete task : "+sba.keyAt(i), Toast.LENGTH_SHORT).show();
+			dbAdapter.deleteTask(list.get(sba.keyAt(i)));
+		}
+
+		list = dbAdapter.getTasks();
+		dbAdapter.close();
+		
+		listView.setAdapter(new MainListItemAdapter(view.getContext(), list));
 	}
 
 	public void filterTask(View view) {
@@ -131,7 +159,7 @@ public class MainActivity extends ListActivity{
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				Collections.sort(list, new Task.CompareTitle());
-				Toast.makeText(context, "sort Title", Toast.LENGTH_LONG).show();
+				Toast.makeText(context, R.string.sortByTitle, Toast.LENGTH_SHORT).show();
 				listView.setAdapter(new MainListItemAdapter(context, list));
 				return false;
 			}
@@ -141,7 +169,7 @@ public class MainActivity extends ListActivity{
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				Collections.sort(list, new Task.ComparePriority());
-				Toast.makeText(context, "sort Priority", Toast.LENGTH_LONG).show();
+				Toast.makeText(context, R.string.sortByPriority, Toast.LENGTH_SHORT).show();
 				listView.setAdapter(new MainListItemAdapter(context, list));
 				return false;
 			}
@@ -151,24 +179,12 @@ public class MainActivity extends ListActivity{
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				Collections.sort(list, new Task.CompareStatus());
-				Toast.makeText(context, "sort Status", Toast.LENGTH_LONG).show();
+				Toast.makeText(context, R.string.sortByStatus, Toast.LENGTH_SHORT).show();
 				listView.setAdapter(new MainListItemAdapter(context, list));
 				return false;
 			}
 		});
 
-	}
-
-	@Override
-	protected void onResume() {
-		dbAdapter.open();
-		super.onResume();
-	}
-
-	@Override
-	protected void onPause() {
-		dbAdapter.close();
-		super.onPause();
 	}
 
 	private void showPopupFilter(final Activity context) {
@@ -184,11 +200,15 @@ public class MainActivity extends ListActivity{
 		filterDateStart = (TextView) layout.findViewById(R.id.dateStartValue);
 		filterDateEnd = (TextView) layout.findViewById(R.id.dateEndValue);
 
+		switchTitle = (Switch) layout.findViewById(R.id.switchTitle);
+		switchDate = (Switch) layout.findViewById(R.id.switchDate);
+		switchStatus = (Switch) layout.findViewById(R.id.switchStatus);
+
 		final Calendar c = Calendar.getInstance();
-		year_start = c.get(Calendar.YEAR);
+		year_start = c.get(Calendar.YEAR)-1;
 		month_start = c.get(Calendar.MONTH)+1;
 		day_start = c.get(Calendar.DAY_OF_MONTH);
-		year_end = year_start+1;
+		year_end = year_start+2;
 		month_end = month_start;
 		day_end = day_start;
 		filterDateStart.setText(day_start + "-" + month_start + "-" + year_start);
@@ -230,7 +250,6 @@ public class MainActivity extends ListActivity{
 					e.printStackTrace();
 				}
 				popup.dismiss();
-
 				return false;
 			}
 		});
@@ -245,37 +264,45 @@ public class MainActivity extends ListActivity{
 		list = dbAdapter.getTasks();
 		dbAdapter.close();
 
-		// Add checkbox for title
-		// IF TITLECHECKBOX IS CHECKED
 		List<Task> filteredList = new ArrayList<Task>();
-		
-		for(Task t : list){
-			if(t.getTitle().contains(title)){
-				filteredList.add(t);
+		filteredList.addAll(list);
+
+		if(switchTitle.isChecked()){
+			for (Iterator<Task> it = filteredList.iterator(); it.hasNext(); ) {
+				Task t = it.next();
+				if( !(t.getTitle().contains(title)) )
+					it.remove();
 			}
 		}
-		// FIN IF TITLE
-		
+
 		// Checkbox for date
-		// IF DATECHECKBOX IS CHECKED
 		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
 		Date dateStart = format.parse(dateS);
 		Date dateEnd = format.parse(dateE);
 		Date dateTask;
-		for(Task t : list){
-				dateTask = format.parse(t.getDate());
-			if(dateStart.compareTo(dateTask) <= 0 && dateTask.compareTo(dateEnd) <= 0)
-				filteredList.add(t);
-		}
-		// FIN IF DATE
-		
-		// IF STATUS IS CHECKED
-		//FIN IF STATUS
-		
-		// IF PRIORITY IS CHECKED
-		//FIN IF PRIORITY
 
-		listView.setAdapter(new MainListItemAdapter(getBaseContext(), filteredList));
+		if(switchDate.isChecked()){
+			for (Iterator<Task> it = filteredList.iterator(); it.hasNext(); ) {
+				Task t = it.next();
+				dateTask = format.parse(t.getDate());
+				if( !(dateStart.compareTo(dateTask) <= 0 && dateTask.compareTo(dateEnd) <= 0) )
+					it.remove();
+			}
+		}
+
+		if(switchStatus.isChecked())
+			for (Iterator<Task> it = filteredList.iterator(); it.hasNext(); ) {
+				Task t = it.next();
+				if(t.getStatus() != spinnerStatus.getSelectedItemId())
+					it.remove();
+			}
+
+		if(switchTitle.isChecked() || switchDate.isChecked() || switchStatus.isChecked()){
+			listView.setAdapter(new MainListItemAdapter(getBaseContext(), filteredList));
+		}else{
+			listView.setAdapter(new MainListItemAdapter(getBaseContext(), list));
+		}
+
 	}
 
 	public void showCalendarDialogOnStart(View view){

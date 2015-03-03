@@ -30,6 +30,17 @@ public class Task implements Parcelable{
 		priority = LOW_PRIORITY;
 		status = 0;
 	}
+	
+	public Task(Task t){
+		id = t.id;
+		title = t.title;
+		description = t.description;
+		date = t.date;
+		hour = t.hour;
+		category = t.category;
+		priority = t.priority;
+		status = t.status;
+	}
 
 	public Task(Parcel source){
 		id = source.readLong();

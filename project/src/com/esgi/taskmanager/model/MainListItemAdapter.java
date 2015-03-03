@@ -5,21 +5,25 @@ import java.util.List;
 import com.esgi.taskmanager.R;
 
 import android.content.Context;
+import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainListItemAdapter extends BaseAdapter {
 	private Context context;
 	private List<Task> tasks;
 	private static LayoutInflater inflater = null;
+	private SparseBooleanArray selectedTasks;
 
 	public MainListItemAdapter(Context context, List<Task> tasks) {
 		this.context = context;
 		this.tasks = tasks;
 		inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		selectedTasks = new SparseBooleanArray();
 	}
 
 	@Override
@@ -65,8 +69,36 @@ public class MainListItemAdapter extends BaseAdapter {
 		else
 			letter_in_circle = "!!!";
 
+		
+		if(selectedTasks.get(position)){
+			letter_in_circle = "X";
+			res_background = R.drawable.round_button_delete;
+		}
 		circle.setBackgroundResource(res_background);
 		circle.setText(letter_in_circle);
+
 		return vi;
 	}
+
+	public void toggleSelection(int position) {
+		selectView(position, !selectedTasks.get(position));
+	}
+	
+	public SparseBooleanArray getSelectedTasks(){
+		return selectedTasks;
+	}
+
+	public void removeSelection() {
+		selectedTasks = new SparseBooleanArray();
+		notifyDataSetChanged();
+	}
+
+	private void selectView(int position, boolean value) {
+		if (value)
+			selectedTasks.put(position, value);
+		else
+			selectedTasks.delete(position);
+		notifyDataSetChanged();
+	}
+
 }
