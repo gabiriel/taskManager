@@ -51,8 +51,8 @@
     </string-array>
 
     <!-- SQL Message -->
-    <string name="savedIntoDB">Saved into DB</string>
-    <string name="editedIntoDB">Edited into DB</string>
-    <string name="deletedIntoDB">Deleted into DB</string>
+    <string name="savedIntoDB">Task saved</string>
+    <string name="editedIntoDB">Task edited</string>
+    <string name="deletedIntoDB">Task deleted</string>
 
 </resources>
