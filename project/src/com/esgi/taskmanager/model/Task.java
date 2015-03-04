@@ -106,7 +106,14 @@ public class Task implements Parcelable{
 			return (int) (t1.status - t2.status);
 		}
 	}
-
+	
+	// Comparator
+	public static class CompareId implements Comparator<Task> {
+		@Override
+		public int compare(Task t1, Task t2) {
+			return (int) (t1.id - t2.id);
+		}
+	}
 
 	public String getTitle() {
 		return title;

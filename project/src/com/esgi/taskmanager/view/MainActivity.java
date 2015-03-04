@@ -145,6 +145,7 @@ public class MainActivity extends ListActivity{
 		TextView sortTitle = (TextView) layout.findViewById(R.id.sortTitle);
 		TextView sortPriority = (TextView) layout.findViewById(R.id.sortPriority);
 		TextView sortStatus = (TextView) layout.findViewById(R.id.sortStatus);
+		TextView sortNone = (TextView) layout.findViewById(R.id.sortNone);
 
 		// Creating the PopupWindow
 		final PopupWindow popup = new PopupWindow(context);
@@ -164,6 +165,7 @@ public class MainActivity extends ListActivity{
 				Collections.sort(list, new Task.CompareTitle());
 				Toast.makeText(context, R.string.sortByTitle, Toast.LENGTH_SHORT).show();
 				listView.setAdapter(new MainListItemAdapter(context, list));
+				popup.dismiss();
 				return false;
 			}
 		});
@@ -174,6 +176,7 @@ public class MainActivity extends ListActivity{
 				Collections.sort(list, new Task.ComparePriority());
 				Toast.makeText(context, R.string.sortByPriority, Toast.LENGTH_SHORT).show();
 				listView.setAdapter(new MainListItemAdapter(context, list));
+				popup.dismiss();
 				return false;
 			}
 		});
@@ -184,6 +187,17 @@ public class MainActivity extends ListActivity{
 				Collections.sort(list, new Task.CompareStatus());
 				Toast.makeText(context, R.string.sortByStatus, Toast.LENGTH_SHORT).show();
 				listView.setAdapter(new MainListItemAdapter(context, list));
+				popup.dismiss();
+				return false;
+			}
+		});
+		
+		sortNone.setOnTouchListener(new OnTouchListener() {
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				Collections.sort(list, new Task.CompareId());
+				listView.setAdapter(new MainListItemAdapter(context, list));
+				popup.dismiss();
 				return false;
 			}
 		});

@@ -34,7 +34,7 @@ public final class R {
         public static final int round_button_to_do=0x7f020005;
     }
     public static final class id {
-        public static final int action_settings=0x7f090022;
+        public static final int action_settings=0x7f090023;
         public static final int buttonAdd=0x7f09000e;
         public static final int buttonDelete=0x7f09000c;
         public static final int buttonFilter=0x7f09000f;
@@ -54,6 +54,7 @@ public final class R {
         public static final int labelStatus=0x7f090006;
         public static final int popup=0x7f090014;
         public static final int priority_spinner=0x7f090009;
+        public static final int sortNone=0x7f090022;
         public static final int sortPriority=0x7f090021;
         public static final int sortStatus=0x7f090020;
         public static final int sortTitle=0x7f09001f;
@@ -84,31 +85,32 @@ public final class R {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
         public static final int close=0x7f05000d;
-        public static final int dateFormat=0x7f050014;
-        public static final int delete=0x7f05001a;
-        public static final int deletedIntoDB=0x7f05001e;
-        public static final int description=0x7f050012;
-        public static final int editedIntoDB=0x7f05001d;
+        public static final int dateFormat=0x7f050015;
+        public static final int delete=0x7f05001b;
+        public static final int deletedIntoDB=0x7f05001f;
+        public static final int description=0x7f050013;
+        public static final int editedIntoDB=0x7f05001e;
         public static final int end=0x7f05000a;
         public static final int filter=0x7f050004;
-        public static final int labelDate=0x7f050013;
-        public static final int labelPriority=0x7f050018;
-        public static final int labelStatus=0x7f050017;
-        public static final int labelTime=0x7f050015;
+        public static final int labelDate=0x7f050014;
+        public static final int labelPriority=0x7f050019;
+        public static final int labelStatus=0x7f050018;
+        public static final int labelTime=0x7f050016;
         public static final int less=0x7f050003;
-        public static final int pleaseFillTheFields=0x7f05001b;
+        public static final int pleaseFillTheFields=0x7f05001c;
         /**  Header Button 
  Header Button 
          */
         public static final int plus=0x7f050002;
-        public static final int save=0x7f050019;
+        public static final int save=0x7f05001a;
         /**  SQL Message 
  SQL Message 
          */
-        public static final int savedIntoDB=0x7f05001c;
+        public static final int savedIntoDB=0x7f05001d;
         public static final int selectEndDate=0x7f05000b;
         public static final int selectStartDate=0x7f050009;
         public static final int sort=0x7f050005;
+        public static final int sortByNone=0x7f050011;
         public static final int sortByPriority=0x7f050010;
         public static final int sortByStatus=0x7f05000f;
         /**  POPUP Sort 
@@ -121,11 +123,11 @@ public final class R {
  POPUP Filter 
          */
         public static final int timeFilterlabel=0x7f050006;
-        public static final int timeFormat=0x7f050016;
+        public static final int timeFormat=0x7f050017;
         /**  Create Page 
  Create Page 
          */
-        public static final int title=0x7f050011;
+        public static final int title=0x7f050012;
         public static final int validate=0x7f05000c;
     }
     public static final class style {

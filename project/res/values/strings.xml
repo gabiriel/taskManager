@@ -24,6 +24,7 @@
     <string name="sortByTitle">Sort by Title</string>
     <string name="sortByStatus">Sort by Status</string>
     <string name="sortByPriority">Sort by Priority</string>
+    <string name="sortByNone">No Sort</string>
 
     <!-- Create Page -->
     <string name="title">Title</string>
