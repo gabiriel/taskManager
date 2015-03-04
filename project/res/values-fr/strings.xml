@@ -50,8 +50,8 @@
     </string-array>
 
     <!-- SQL Message -->
-    <string name="savedIntoDB">Sauvegardé dans la BDD</string>
-    <string name="editedIntoDB">Edité dans la BDD</string>
-    <string name="deletedIntoDB">Supprimé de la BDD</string>
+    <string name="savedIntoDB">Tâche sauvegardée</string>
+    <string name="editedIntoDB">Tâche éditée</string>
+    <string name="deletedIntoDB">Tâche supprimée</string>
 
 </resources>
