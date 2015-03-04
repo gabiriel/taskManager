@@ -134,11 +134,13 @@ public final class R {
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
         
 
         Base application theme for API 11+. This theme completely replaces
@@ -158,5 +160,8 @@ public final class R {
          */
         public static final int AppTheme=0x7f070001;
         public static final int headButton=0x7f070002;
+        public static final int popupFilterText=0x7f070003;
+        public static final int popupSortText=0x7f070004;
+        public static final int saveDeleteButton=0x7f070005;
     }
 }

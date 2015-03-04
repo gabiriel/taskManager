@@ -8,100 +8,70 @@
 
     <Switch
         android:id="@+id/switchTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/title"
-        android:textColor="#FFF"
-        android:textSize="28sp" />
+        style="@style/popupFilterText"
+        android:text="@string/title" />
 
     <EditText
         android:id="@+id/textTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/popupFilterText"
         android:ems="10"
         android:hint="@string/title"
         android:lines="1"
-        android:maxLength="30"
-        android:textColor="#FFF"
-        android:textSize="20sp" />
+        android:maxLength="30" />
 
     <Switch
         android:id="@+id/switchDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/labelDate"
-        android:textColor="#FFF"
-        android:textSize="28sp" />
+        style="@style/popupFilterText"
+        android:text="@string/labelDate" />
 
     <TextView
         android:id="@+id/labelStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/start"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#FFF" />
+        style="@style/popupFilterText"
+        android:text="@string/start" />
 
     <TextView
         android:id="@+id/dateStartValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/popupFilterText"
         android:clickable="true"
         android:hint="@string/dateFormat"
         android:maxLines="1"
-        android:onClick="showCalendarDialogOnStart"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#FFF" />
+        android:onClick="showCalendarDialogOnStart" />
 
     <TextView
         android:id="@+id/labelEnd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/end"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#FFF" />
+        style="@style/popupFilterText" />
 
     <TextView
         android:id="@+id/dateEndValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/popupFilterText"
         android:clickable="true"
         android:hint="@string/dateFormat"
         android:maxLines="1"
-        android:onClick="showCalendarDialogOnEnd"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#FFF" />
+        android:onClick="showCalendarDialogOnEnd" />
 
     <Switch
         android:id="@+id/switchStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/statusFilterLabel"
-        android:textColor="#FFF"
-        android:textSize="28sp" />
+        style="@style/popupFilterText"
+        android:text="@string/statusFilterLabel" />
 
     <Spinner
         android:id="@+id/status_spinner_popup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/popupFilterText"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:background="#FFF"
         android:spinnerMode="dialog" />
 
     <Button
         android:id="@+id/valid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/validate"
-        android:textColor="#FFF" />
+        style="@style/popupFilterText" />
 
     <Button
         android:id="@+id/close"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/close"
-        android:textColor="#FFF" />
+        style="@style/popupFilterText"
+        android:text="@string/close" />
 
 </LinearLayout>

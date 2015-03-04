@@ -2,13 +2,13 @@
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
+            backward-compatibility can go here.
         -->
     </style>
 
@@ -16,15 +16,39 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-    
+
     <style name="headButton">
-            <item name="android:layout_width">50dp</item>
-            <item name="android:layout_height">50dp</item>
-            <item name="android:layout_marginLeft">22dp</item>
-            <item name="android:topOffset">2dp</item>
-            <item name="android:background">@drawable/round_button_header</item>
-            <item name="android:gravity">center</item>
-            
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginLeft">22dp</item>
+        <item name="android:topOffset">2dp</item>
+        <item name="android:background">@drawable/round_button_header</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="popupFilterText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#FFF</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+    
+    <style name="popupSortText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#FFF</item>
+        <item name="android:clickable">true</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+    
+    <style name="saveDeleteButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">0.5</item>
     </style>
 
 </resources>

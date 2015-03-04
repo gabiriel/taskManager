@@ -113,17 +113,15 @@
 
         <Button
             android:id="@+id/buttonSave"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
             android:onClick="saveTask"
-            android:text="@string/save" />
+            android:text="@string/save"
+            style="@style/saveDeleteButton" />
 
         <Button
             android:id="@+id/buttonDelete"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
             android:onClick="deleteTask"
-            android:text="@string/delete" />
+            android:text="@string/delete"
+            style="@style/saveDeleteButton" />
     </LinearLayout>
 
 </RelativeLayout>
