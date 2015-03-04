@@ -41,4 +41,16 @@
         android:text="@string/sortByPriority"
         android:textColor="#FFF" />
 
+    <TextView
+        android:id="@+id/sortNone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:paddingBottom="8dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="8dp"
+        android:text="@string/sortByNone"
+        android:textColor="#FFF" />
+
 </LinearLayout>

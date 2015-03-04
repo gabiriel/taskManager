@@ -19,7 +19,6 @@ import android.app.DatePickerDialog;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,7 +27,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.view.View.OnTouchListener;
 import android.widget.AdapterView;
@@ -113,7 +111,6 @@ public class MainActivity extends ListActivity{
 		SparseBooleanArray sba = ((MainListItemAdapter) listView.getAdapter()).getSelectedTasks();
 		dbAdapter.open();
 		for(int i=0;i<sba.size();i++){
-			Toast.makeText(getApplicationContext(), "delete task : "+sba.keyAt(i), Toast.LENGTH_SHORT).show();
 			dbAdapter.deleteTask(list.get(sba.keyAt(i)));
 		}
 
@@ -205,7 +202,7 @@ public class MainActivity extends ListActivity{
 	}
 
 	private void showPopupFilter(final Activity context) {
-		int popupWidth = WindowManager.LayoutParams.WRAP_CONTENT;
+		int popupWidth = WindowManager.LayoutParams.MATCH_PARENT;
 		int popupHeight = WindowManager.LayoutParams.WRAP_CONTENT;
 
 		LinearLayout viewGroup = (LinearLayout) context.findViewById(R.id.popup);
