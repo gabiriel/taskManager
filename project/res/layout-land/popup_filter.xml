@@ -92,6 +92,7 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         style="@style/popupFilterText"
+        android:background="#FFF"
         android:spinnerMode="dialog" />
 
     <LinearLayout
