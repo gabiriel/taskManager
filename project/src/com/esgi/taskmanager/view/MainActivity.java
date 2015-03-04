@@ -80,10 +80,12 @@ public class MainActivity extends ListActivity{
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				Task taskSelected = (Task) listView.getItemAtPosition(position);
-				Log.i(TAG, "Task selected : " + taskSelected.getId());
-				Intent editActivity = new Intent(view.getContext(), CreateActivity.class);
-				editActivity.putExtra("task", taskSelected);
-				startActivity(editActivity);
+				if(((MainListItemAdapter) listView.getAdapter()).getSelectedTasks().get(position) == false){
+					Log.i(TAG, "Task selected : " + taskSelected.getId());
+					Intent editActivity = new Intent(view.getContext(), CreateActivity.class);
+					editActivity.putExtra("task", taskSelected);
+					startActivity(editActivity);
+				}
 			}
 		}); 
 
